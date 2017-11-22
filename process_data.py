@@ -29,7 +29,7 @@ def read_files(folder_with_sessions):
 				if emo:
 					emo = emo.group(0)[:-1]
 					if is_integer(emo):
-						gsr = pickle.load(open(join(root, file), 'r'))
+						gsr = pickle.load(open(join(root, file), 'rb'))
 						process_data(int(emo, 10), gsr)
 
 

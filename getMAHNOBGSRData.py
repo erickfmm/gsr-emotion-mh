@@ -18,7 +18,7 @@ def process_file(felt_emo, filename, session_id, folder_to_save):
 		gsr = f.readSignal(40)
 		pickle_file_path = join(folder_to_save, str(felt_emo)+"_"+str(session_id)+"_gsr.dat")
 		print("filename: ", pickle_file_path)
-		with open(pickle_file_path, 'w') as pickle_file:
+		with open(pickle_file_path, 'wb') as pickle_file:
 			pickle.dump(gsr, pickle_file)
 
 def process_session(root_dir, filename, files, folder_to_save):

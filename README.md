@@ -1,4 +1,12 @@
 
+numpy
+```
+pip install pyedflib
+
+conda install pywavelets
+ó
+pip install PyWavelets
+```
 
 | feltEmo# | Emotion_name  |
 |----------|---------------|
@@ -9,9 +17,5 @@
 | 4        | Joy_Happiness |
 | 5        | Sadness       |
 | 6        | Surprise      |
-| 7        | Scream        |
-| 8        | Bored         |
-| 9        | Sleepy        |
-| 10       | Unknown       |
 | 11       | Amusement     |
 | 12       | Anxiety       |

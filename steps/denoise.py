@@ -1,5 +1,5 @@
 import pywt
-
+from scipy.signal import butter, lfilter
 
 def denoise_wavelet(signal):
 	cA, cD = pywt.dwt(signal, 'db5')
@@ -7,4 +7,6 @@ def denoise_wavelet(signal):
 
 def denoise_butterworth(signal):
 	"""To implement. band pass between"""
-	return [1]
+	b, a = butter(4, 0.3, btype='low')
+	y = lfilter(b, a, signal)
+	return y

@@ -5,6 +5,7 @@ import steps.helper as helper
 def all_combinations_of_features(inputs, outputs, classification_algorithm):
 	i_model = 0
 	max_i = 15
+	best_acc = 0
 	with open('output.txt', 'w') as output_file:
 		output_file.write("Number of features, Features, Mean Accuracy, Std Accuracy\n")
 		for number_of_features in range(len(inputs[0])):
@@ -22,7 +23,11 @@ def all_combinations_of_features(inputs, outputs, classification_algorithm):
 				#	return
 				model, scores = classification_algorithm(new_inputs, outputs)
 				#print("number_of_features: ", number_of_features, "combination: ", combination)
-				print("it: %d, Accuracy: %0.3f" % (i_model, scores.mean()))
+				
 				output_file.write(str(number_of_features)+","+helper.list_to_str(combination, '+')+","+str(scores.mean())+","+str(scores.std())+"\n")
-				output_file.flush()
+				if best_acc < scores.mean():
+					best_acc = scores.mean()
+				if i_model % 100 == 0:
+					print("it: %d, Accuracy: %0.3f" % (i_model, best_acc))
+					output_file.flush()
 				i_model += 1

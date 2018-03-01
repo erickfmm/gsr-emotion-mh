@@ -1,1 +1,4 @@
 gsr_mahnob_data/*
+data_not_used/*
+output/*
+steps/__pycache__/*

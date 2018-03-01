@@ -97,7 +97,7 @@ def get_feature_vector(signal):
 	features.append(np.absolute(np.std(fft)))
 	features.append(np.absolute(np.max(fft)))
 	features.append(np.absolute(np.min(fft)))
-	features.append(np.absolute(np.min(fft)+np.max(fft))) #ni idea, dice "maximum and minimum" y no sé que es y es una sola cosa o no da la cantidad ._.
+	#features.append(np.absolute(np.min(fft)+np.max(fft))) #ni idea, dice "maximum and minimum" y no sé que es y es una sola cosa o no da la cantidad ._.
 	features.append(np.absolute(np.max(fft)-np.min(fft)))
 	"""
 	Frequency
